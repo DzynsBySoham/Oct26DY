@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZYNSBYSOHAM | INVOICE #DY004 (OCT 2026)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            neon: '#ccff00',
+                            charcoal: '#0d0e12',
+                            panel: '#1a1b22',
+                            edge: '#282a33',
+                            paper: '#f8f9fa'
+                        }
+                    },
+                    fontFamily: {
+                        syne: ['Syne', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --printer-border: rgba(255, 255, 255, 0.08);
+            --printer-screen: #0a0b0e;
+            --accent: #ccff00;
+            --paper-bg: #f7f8fa;
+            --paper-text: #111418;
+            --paper-muted: #64748b;
+            --paper-border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(204, 255, 0, 0.06) 0%, transparent 55%),
+                radial-gradient(circle at 80% 85%, rgba(255, 255, 255, 0.03) 0%, transparent 45%),
+                radial-gradient(circle at 15% 50%, rgba(204, 255, 0, 0.02) 0%, transparent 35%);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2.25rem 1rem 4.5rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Serrated Sawtooth edge for thermal paper tear */
+        .serrated-edge {
+            clip-path: polygon(
+                0% 0%, 100% 0%, 100% calc(100% - 5px),
+                98.75% 100%, 97.5% calc(100% - 5px), 96.25% 100%, 95.0% calc(100% - 5px),
+                93.75% 100%, 92.5% calc(100% - 5px), 91.25% 100%, 90.0% calc(100% - 5px),
+                88.75% 100%, 87.5% calc(100% - 5px), 86.25% 100%, 85.0% calc(100% - 5px),
+                83.75% 100%, 82.5% calc(100% - 5px), 81.25% 100%, 80.0% calc(100% - 5px),
+                78.75% 100%, 77.5% calc(100% - 5px), 76.25% 100%, 75.0% calc(100% - 5px),
+                73.75% 100%, 72.5% calc(100% - 5px), 71.25% 100%, 70.0% calc(100% - 5px),
+                68.75% 100%, 67.5% calc(100% - 5px), 66.25% 100%, 65.0% calc(100% - 5px),
+                63.75% 100%, 62.5% calc(100% - 5px), 61.25% 100%, 60.0% calc(100% - 5px),
+                58.75% 100%, 57.5% calc(100% - 5px), 56.25% 100%, 55.0% calc(100% - 5px),
+                53.75% 100%, 52.5% calc(100% - 5px), 51.25% 100%, 50.0% calc(100% - 5px),
+                48.75% 100%, 47.5% calc(100% - 5px), 46.25% 100%, 45.0% calc(100% - 5px),
+                43.75% 100%, 42.5% calc(100% - 5px), 41.25% 100%, 40.0% calc(100% - 5px),
+                38.75% 100%, 37.5% calc(100% - 5px), 36.25% 100%, 35.0% calc(100% - 5px),
+                33.75% 100%, 32.5% calc(100% - 5px), 31.25% 100%, 30.0% calc(100% - 5px),
+                28.75% 100%, 27.5% calc(100% - 5px), 26.25% 100%, 25.0% calc(100% - 5px),
+                23.75% 100%, 22.5% calc(100% - 5px), 21.25% 100%, 20.0% calc(100% - 5px),
+                18.75% 100%, 17.5% calc(100% - 5px), 16.25% 100%, 15.0% calc(100% - 5px),
+                13.75% 100%, 12.5% calc(100% - 5px), 11.25% 100%, 10.0% calc(100% - 5px),
+                8.75% 100%, 7.5% calc(100% - 5px), 6.25% 100%, 5.0% calc(100% - 5px),
+                3.75% 100%, 2.5% calc(100% - 5px), 1.25% 100%, 0% calc(100% - 5px)
+            );
+        }
+
+        /* Stepped mechanical feed animation */
+        @keyframes feedPaperStepped {
+            0% { transform: translateY(-100%); opacity: 0.1; }
+            8% { transform: translateY(-88%); opacity: 1; }
+            12% { transform: translateY(-88%); }
+            22% { transform: translateY(-72%); }
+            26% { transform: translateY(-72%); }
+            38% { transform: translateY(-54%); }
+            42% { transform: translateY(-54%); }
+            54% { transform: translateY(-38%); }
+            58% { transform: translateY(-38%); }
+            72% { transform: translateY(-22%); }
+            76% { transform: translateY(-22%); }
+            88% { transform: translateY(-8%); }
+            92% { transform: translateY(-8%); }
+            100% { transform: translateY(0%); opacity: 1; }
+        }
+
+        .stage-processing #receiptPaper {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        .stage-printing #receiptPaper {
+            animation: feedPaperStepped 1.85s cubic-bezier(0.18, 0.89, 0.32, 1) forwards;
+        }
+
+        .stage-complete #receiptPaper {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+
+        /* Spinner for printer screen */
+        .spinner-line {
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(204, 255, 0, 0.2);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: rotateSpin 0.75s linear infinite;
+        }
+
+        @keyframes rotateSpin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Action buttons glow & hover */
+        .btn-glow {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -4px rgba(204, 255, 0, 0.3);
+        }
+
+        /* Subtle thermal receipt paper micro-texture */
+        .paper-texture {
+            background-image: 
+                radial-gradient(rgba(17, 20, 24, 0.035) 1px, transparent 0),
+                linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(244,246,248,1) 100%);
+            background-size: 5px 5px, 100% 100%;
+        }
+
+        /* Print formatting */
+        @media print {
+            body {
+                background: #ffffff !important;
+                padding: 0 !important;
+                color: #000000 !important;
+            }
+            .no-print, .receipt-printer-machine, .printer-slot-edge, #actionBar {
+                display: none !important;
+            }
+            .receipt-printer-output {
+                margin: 0 !important;
+                width: 100% !important;
+                filter: none !important;
+            }
+            #receiptPaper {
+                transform: none !important;
+                opacity: 1 !important;
+                box-shadow: none !important;
+                clip-path: none !important;
+                padding: 1.5rem 1rem !important;
+                border: 1px solid #ddd;
+            }
+            .qr-dl-btn {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="selection:bg-[#ccff00] selection:text-black">
+
+    <!-- Top Navigation / Controls Bar -->
+    <header class="w-full max-w-md flex items-center justify-between mb-5 px-1 no-print">
+        <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ccff00] animate-pulse"></span>
+            <span class="font-mono text-xs uppercase tracking-wider text-neutral-400">POS Thermal Unit v4.2</span>
+        </div>
+        <div class="flex items-center gap-2" id="actionBar">
+            <button onclick="reprintInvoice()" title="Re-feed receipt animation" class="btn-glow px-3 py-1.5 rounded-lg bg-neutral-900 border border-neutral-700 hover:border-[#ccff00] text-xs font-mono text-neutral-300 hover:text-[#ccff00] flex items-center gap-1.5 transition">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                Re-Print
+            </button>
+            <button onclick="window.print()" title="Print physical or save PDF" class="btn-glow px-3 py-1.5 rounded-lg bg-[#ccff00] text-black font-semibold text-xs font-mono flex items-center gap-1.5 hover:bg-[#b8e600] transition">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                Export PDF
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-[430px] flex flex-col items-center relative z-10" id="receiptPrinterRoot">
+        
+        <!-- Physical Dark Machine Shell -->
+        <section class="w-full bg-gradient-to-b from-[#262832] via-[#1d1f27] to-[#14151b] rounded-t-[30px] rounded-b-2xl p-4 sm:p-5 border border-white/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.9)] relative z-20">
+            
+            <!-- Machine Top Bar -->
+            <div class="flex items-center justify-between pb-3.5 border-b border-white/5">
+                <div class="flex items-center gap-2">
+                    <span class="font-syne font-extrabold text-[13px] tracking-[2.5px] text-[#ccff00]">DZYNSBYSOHAM</span>
+                    <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-white/10 text-neutral-300">STUDIO POS</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] font-mono text-neutral-400">OCT'26</span>
+                    <div class="flex items-center gap-1.5 ml-1">
+                        <span class="w-2 h-2 rounded-full bg-[#ccff00] shadow-[0_0_8px_#ccff00]" id="ledPower" title="Power OK"></span>
+                        <span class="w-2 h-2 rounded-full bg-neutral-700 transition-colors duration-300" id="ledStatus" title="Transmitting"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recessed LCD Terminal Display -->
+            <div class="mt-3.5 bg-[#0a0b0e] rounded-xl p-3 border border-white/5 shadow-[inset_0_3px_8px_rgba(0,0,0,0.8)] flex items-center justify-between overflow-hidden">
+                <div class="flex items-center gap-3 w-full">
+                    <div class="w-5 h-5 flex items-center justify-center shrink-0">
+                        <div class="spinner-line" id="spinnerIcon" aria-hidden="true"></div>
+                        <svg class="w-5 h-5 text-[#ccff00] hidden" id="checkIcon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+
+                    <!-- Rolling message slider -->
+                    <div class="h-[18px] overflow-hidden relative flex-1">
+                        <div class="flex flex-col transition-transform duration-500 ease-out font-mono text-xs text-neutral-200" id="statusTrack">
+                            <span class="h-[18px] leading-[18px] flex items-center gap-1.5 text-neutral-300">
+                                <span class="text-neutral-500">▶</span> Verifying Oct Deliverables...
+                            </span>
+                            <span class="h-[18px] leading-[18px] flex items-center gap-1.5 text-[#ccff00]">
+                                <span class="animate-pulse">●</span> Thermal Head Printing #DY004...
+                            </span>
+                            <span class="h-[18px] leading-[18px] flex items-center gap-1.5 text-emerald-400 font-semibold">
+                                <span>✓</span> Invoice Ready • 4 Items Recorded
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Micro Badge -->
+                    <span class="font-mono text-[10px] font-bold text-[#ccff00] bg-[#ccff00]/10 px-2 py-0.5 rounded tracking-wide border border-[#ccff00]/20" id="stageBadge">
+                        READY
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mechanical Mouth Slot & Feeding Output -->
+        <div class="receipt-printer-output w-[92%] -mt-2 relative z-10 filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.65)]">
+            <!-- Physical Plastic Edge Bar -->
+            <div class="printer-slot-edge h-2.5 bg-[#090a0d] rounded-sm border-x border-b border-white/5 shadow-[inset_0_4px_6px_rgba(0,0,0,0.9)] relative z-30"></div>
+
+            <!-- Receipt Paper Container -->
+            <article class="paper-texture text-[#12151a] serrated-edge px-5 sm:px-6 pt-7 pb-8 w-full shadow-2xl transition-all relative z-10" id="receiptPaper">
+                
+                <!-- Header -->
+                <header class="text-center border-b border-dashed border-neutral-300 pb-4 mb-4">
+                    <p class="font-mono text-[10px] tracking-[3px] text-neutral-500 uppercase font-semibold">CREATIVE BILLING / OCT 2026</p>
+                    <h1 class="font-syne font-extrabold text-2xl sm:text-3xl text-neutral-950 uppercase tracking-tight leading-none mt-1">
+                        dzynsby<br>soham
+                    </h1>
+                    <p class="text-[11px] font-medium text-neutral-600 mt-1.5 tracking-wide">Digital Graphics & Motion Assets</p>
+                </header>
+
+                <!-- Metadata Grid -->
+                <section class="grid grid-cols-2 gap-y-2.5 gap-x-2 text-xs border-b border-dashed border-neutral-300 pb-4 mb-4 font-inter">
+                    <div class="flex flex-col">
+                        <span class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">INVOICE ID</span>
+                        <span class="font-syne font-bold text-neutral-950 text-sm">#DY004</span>
+                    </div>
+                    <div class="flex flex-col text-right">
+                        <span class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">DATE</span>
+                        <span class="font-semibold text-neutral-900">October 31, 2026</span>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <span class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">BILLED TO</span>
+                        <span class="font-bold text-neutral-900">DHH Yash</span>
+                    </div>
+                    <div class="flex flex-col text-right">
+                        <span class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">CYCLE</span>
+                        <span class="font-semibold text-neutral-900">Oct'26</span>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <span class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">STATUS</span>
+                        <div>
+                            <span class="inline-block bg-neutral-950 text-[#ccff00] text-[9px] font-mono font-bold px-2 py-0.5 rounded tracking-wide">
+                                DUE • UNPAID
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col text-right">
+                        <span class="text-[9px] uppercase tracking-wider text-neutral-500 font-bold">BILLING PERIOD</span>
+                        <span class="font-semibold text-neutral-900">1st Oct - 31st Oct</span>
+                    </div>
+                </section>
+
+                <!-- Deliverables Head -->
+                <div class="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider font-bold text-neutral-500 mb-2.5">
+                    <span>Deliverables (4 Items)</span>
+                    <span>Rate / Total</span>
+                </div>
+
+                <!-- 4 Deliverables (₹300 each) -->
+                <div class="flex flex-col gap-2.5 border-b border-dashed border-neutral-300 pb-4 mb-4">
+                    
+                    <!-- Item 1 -->
+                    <div class="flex items-center justify-between text-xs py-0.5">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded bg-neutral-200 border border-neutral-300 flex items-center justify-center overflow-hidden shrink-0">
+                                <img src="Images/thumbnail1.jpg" alt="Thumbnail 1" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/80x80/1a1b22/ccff00?text=TH1'">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="font-bold text-neutral-900 leading-tight">Thumbnail 1</span>
+                                <span class="text-[10px] text-neutral-500 font-mono">Deliverable #01</span>
+                            </div>
+                        </div>
+                        <span class="font-mono font-bold text-neutral-950 text-sm">₹300</span>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex items-center justify-between text-xs py-0.5">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded bg-neutral-200 border border-neutral-300 flex items-center justify-center overflow-hidden shrink-0">
+                                <img src="Images/thumbnail2.jpg" alt="Thumbnail 2" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/80x80/1a1b22/ccff00?text=TH2'">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="font-bold text-neutral-900 leading-tight">Thumbnail 2</span>
+                                <span class="text-[10px] text-neutral-500 font-mono">Deliverable #02</span>
+                            </div>
+                        </div>
+                        <span class="font-mono font-bold text-neutral-950 text-sm">₹300</span>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex items-center justify-between text-xs py-0.5">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded bg-neutral-200 border border-neutral-300 flex items-center justify-center overflow-hidden shrink-0">
+                                <img src="Images/thumbnail3.jpg" alt="Thumbnail 3" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/80x80/1a1b22/ccff00?text=TH3'">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="font-bold text-neutral-900 leading-tight">Thumbnail 3</span>
+                                <span class="text-[10px] text-neutral-500 font-mono">Deliverable #03</span>
+                            </div>
+                        </div>
+                        <span class="font-mono font-bold text-neutral-950 text-sm">₹300</span>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="flex items-center justify-between text-xs py-0.5">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded bg-neutral-200 border border-neutral-300 flex items-center justify-center overflow-hidden shrink-0">
+                                <img src="Images/thumbnail4.jpg" alt="Thumbnail 4" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/80x80/1a1b22/ccff00?text=TH4'">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="font-bold text-neutral-900 leading-tight">Thumbnail 4</span>
+                                <span class="text-[10px] text-neutral-500 font-mono">Deliverable #04</span>
+                            </div>
+                        </div>
+                        <span class="font-mono font-bold text-neutral-950 text-sm">₹300</span>
+                    </div>
+
+                </div>
+
+                <!-- Financial Summary -->
+                <section class="flex flex-col gap-1.5 text-xs font-inter border-b-2 border-dashed border-neutral-300 pb-4 mb-4">
+                    <div class="flex justify-between items-center text-neutral-600">
+                        <span>Items Subtotal (4 &times; ₹300)</span>
+                        <span class="font-mono font-semibold">₹1,200</span>
+                    </div>
+                    <div class="flex justify-between items-center text-neutral-600">
+                        <span>Gross Total</span>
+                        <span class="font-mono font-semibold text-neutral-900">₹1,200</span>
+                    </div>
+                    <div class="flex justify-between items-center text-neutral-500">
+                        <span>Advance Paid</span>
+                        <span class="font-mono">₹0</span>
+                    </div>
+                    
+                    <!-- Grand Total Highlight -->
+                    <div class="flex justify-between items-baseline pt-2 mt-1 border-t border-neutral-300">
+                        <div>
+                            <span class="text-[10px] uppercase font-mono font-bold tracking-wider text-neutral-500 block leading-tight">TOTAL DUE</span>
+                            <span class="text-[11px] text-neutral-500">Net Payable Amount</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="font-syne font-extrabold text-3xl text-neutral-950 tracking-tight leading-none">₹1,200</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- QR Scan Section -->
+                <section class="flex flex-col items-center text-center">
+                    <div 
+                        onclick="downloadQR()" 
+                        role="button" 
+                        tabindex="0" 
+                        aria-label="Download UPI Payment QR Code"
+                        class="qr-container group relative w-28 h-28 p-2 rounded-xl bg-white border border-neutral-300 shadow-sm hover:shadow-md cursor-pointer transition transform hover:scale-105 active:scale-95 flex items-center justify-center"
+                    >
+                        <!-- QR Code Display with safe fallback -->
+                        <img 
+                            src="Images/pay.png" 
+                            id="qrImage" 
+                            class="w-full h-full object-contain" 
+                            alt="Scan to Pay ₹1,200"
+                            onerror="this.onerror=null; this.src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=soham@upi&pn=DZYNSBYSOHAM&am=1200.00&cu=INR&tn=DY004%20Oct%20Invoice';"
+                        >
+                        <!-- Hover Overlay -->
+                        <div class="qr-dl-btn absolute inset-0 bg-neutral-950/90 text-[#ccff00] text-[10px] font-mono font-bold rounded-xl flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity p-2 text-center leading-tight">
+                            <span>DOWNLOAD</span>
+                            <span class="text-white text-[9px]">PAYMENT QR</span>
+                        </div>
+                    </div>
+                    
+                    <span class="font-mono text-[10px] uppercase text-neutral-500 font-semibold tracking-wider mt-2.5">
+                        SCAN OR TAP TO PAY ₹1,200
+                    </span>
+                    <span class="text-[10px] text-neutral-400 font-medium">UPI / GPay / PhonePe / Paytm</span>
+                </section>
+
+                <!-- Footer Note -->
+                <footer class="mt-5 pt-3 border-t border-dotted border-neutral-300 text-center font-mono text-[9px] text-neutral-400">
+                    <p>THANK YOU FOR YOUR PARTNERSHIP!</p>
+                    <p class="mt-0.5">DZYNSBYSOHAM • ALL RIGHTS RESERVED 2026</p>
+                </footer>
+
+            </article>
+        </div>
+
+    </main>
+
+    <!-- Notification Toast for Actions -->
+    <div id="toast" class="fixed bottom-6 bg-neutral-900 border border-[#ccff00]/40 text-[#ccff00] font-mono text-xs px-4 py-2.5 rounded-xl shadow-xl opacity-0 pointer-events-none transition-all duration-300 transform translate-y-3 z-50 flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#ccff00]"></span>
+        <span id="toastMsg">Action completed</span>
+    </div>
+
+    <script>
+        // Machine Stages
+        const STAGES = {
+            PROCESSING: 'processing',
+            PRINTING: 'printing',
+            COMPLETE: 'complete'
+        };
+
+        let currentStage = STAGES.PROCESSING;
+
+        const rootEl = document.getElementById('receiptPrinterRoot');
+        const statusTrack = document.getElementById('statusTrack');
+        const stageBadge = document.getElementById('stageBadge');
+        const ledStatus = document.getElementById('ledStatus');
+        const spinnerIcon = document.getElementById('spinnerIcon');
+        const checkIcon = document.getElementById('checkIcon');
+        const receiptPaper = document.getElementById('receiptPaper');
+
+        function setStage(stage) {
+            currentStage = stage;
+            rootEl.classList.remove('stage-processing', 'stage-printing', 'stage-complete');
+            rootEl.classList.add(`stage-${stage}`);
+
+            if (stage === STAGES.PROCESSING) {
+                statusTrack.style.transform = 'translateY(0px)';
+                stageBadge.textContent = 'CHECK';
+                stageBadge.className = 'font-mono text-[10px] font-bold text-neutral-400 bg-white/5 px-2 py-0.5 rounded tracking-wide border border-white/10';
+                ledStatus.classList.remove('bg-[#ccff00]', 'shadow-[0_0_8px_#ccff00]');
+                ledStatus.classList.add('bg-neutral-700');
+                spinnerIcon.classList.remove('hidden');
+                checkIcon.classList.add('hidden');
+            } else if (stage === STAGES.PRINTING) {
+                statusTrack.style.transform = 'translateY(-18px)';
+                stageBadge.textContent = 'PRINTING';
+                stageBadge.className = 'font-mono text-[10px] font-bold text-[#ccff00] bg-[#ccff00]/10 px-2 py-0.5 rounded tracking-wide border border-[#ccff00]/20 animate-pulse';
+                ledStatus.classList.remove('bg-neutral-700');
+                ledStatus.classList.add('bg-[#ccff00]', 'shadow-[0_0_8px_#ccff00]');
+                spinnerIcon.classList.remove('hidden');
+                checkIcon.classList.add('hidden');
+            } else if (stage === STAGES.COMPLETE) {
+                statusTrack.style.transform = 'translateY(-36px)';
+                stageBadge.textContent = 'DY004 OK';
+                stageBadge.className = 'font-mono text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded tracking-wide border border-emerald-500/30';
+                ledStatus.classList.remove('bg-neutral-700');
+                ledStatus.classList.add('bg-[#ccff00]', 'shadow-[0_0_8px_#ccff00]');
+                spinnerIcon.classList.add('hidden');
+                checkIcon.classList.remove('hidden');
+            }
+        }
+
+        // Trigger mechanical print sequence
+        function triggerPrintSequence() {
+            setStage(STAGES.PROCESSING);
+
+            // Phase 1: Processing for 750ms
+            setTimeout(() => {
+                setStage(STAGES.PRINTING);
+
+                // Re-trigger animation cleanly
+                receiptPaper.style.animation = 'none';
+                void receiptPaper.offsetWidth; // trigger reflow
+                receiptPaper.style.animation = 'feedPaperStepped 1.85s cubic-bezier(0.18, 0.89, 0.32, 1) forwards';
+
+                // Phase 2: Feed completion
+                setTimeout(() => {
+                    setStage(STAGES.COMPLETE);
+                }, 1850);
+            }, 750);
+        }
+
+        // Re-print user action
+        function reprintInvoice() {
+            triggerPrintSequence();
+            showToast("Re-printing October invoice...");
+        }
+
+        // QR Code Downloader
+        function downloadQR() {
+            const qrImg = document.getElementById('qrImage');
+            const targetUrl = qrImg.src;
+            
+            const link = document.createElement('a');
+            link.href = targetUrl;
+            link.download = 'DHH_Yash_DY004_Oct26_QR.png';
+            link.target = '_blank';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            showToast("Payment QR saved to device!");
+        }
+
+        // Notification utility
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.textContent = msg;
+            toast.classList.remove('opacity-0', 'translate-y-3', 'pointer-events-none');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-3', 'pointer-events-none');
+                toast.classList.remove('opacity-100', 'translate-y-0');
+            }, 2800);
+        }
+
+        // Initial boot
+        window.addEventListener('DOMContentLoaded', () => {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) {
+                setStage(STAGES.COMPLETE);
+            } else {
+                triggerPrintSequence();
+            }
+        });
+    </script>
+</body>
+</html>
